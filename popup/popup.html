@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频播放器</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🎬 视频播放器</h1>
+    </header>
+
+    <section class="video-list">
+      <h2>📺 当前页面 (<span id="video-count">0</span>个视频)</h2>
+      <ul id="page-videos"></ul>
+    </section>
+
+    <section class="playlist">
+      <h2>📋 播放列表</h2>
+      <ul id="playlist" class="sortable"></ul>
+      <div class="playlist-controls">
+        <button id="btn-clear-list">清空列表</button>
+        <button id="btn-play-all">全部播放</button>
+      </div>
+    </section>
+
+    <section class="settings">
+      <h2>⚙ 设置</h2>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="auto-play" checked>
+          自动播放
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="save-record" checked>
+          保存播放记录
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>
+          <input type="checkbox" id="loop-play">
+          循环播放
+        </label>
+      </div>
+      <div class="setting-item">
+        <label>默认倍速:</label>
+        <select id="default-speed">
+          <option value="0.5">0.5x</option>
+          <option value="0.75">0.75x</option>
+          <option value="1" selected>1.0x</option>
+          <option value="1.25">1.25x</option>
+          <option value="1.5">1.5x</option>
+          <option value="2">2.0x</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="shortcuts">
+      <h2>⌨ 快捷键</h2>
+      <div class="shortcut-list">
+        <div class="shortcut-item"><kbd>Space</kbd> 播放/暂停</div>
+        <div class="shortcut-item"><kbd>←</kbd><kbd>→</kbd> 快退/快进10秒</div>
+        <div class="shortcut-item"><kbd>↑</kbd><kbd>↓</kbd> 音量调节</div>
+        <div class="shortcut-item"><kbd>&lt;</kbd><kbd>&gt;</kbd> 倍速调节</div>
+        <div class="shortcut-item"><kbd>M</kbd> 静音</div>
+        <div class="shortcut-item"><kbd>F</kbd> 全屏</div>
+      </div>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
